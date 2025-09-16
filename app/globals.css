@@ -1,0 +1,2217 @@
+/* ===== EduGarden — Global Styles ===== */
+
+/* Paletă & bază */
+:root {
+  --eg-green: #166A35;   /* verde intens (titluri, butoane) */
+  --eg-green-200: #CFECCD; /* bandă header (verde deschis) */
+  --text: #0f1720;       /* text principal */
+  --muted: #2b3b2f;      /* text secundar */
+  --cream: #FDFBF3;      /* fundal cald */
+
+
+
+  --radius-lg: 18px;
+  --radius-md: 14px;
+  --shadow-inset: 0 2px 0 rgba(0,0,0,.14) inset;
+  --shadow-soft: 0 6px 16px rgba(0,0,0,.12);
+  --shadow-pill: 0 2px 6px rgba(0,0,0,.10);
+}
+
+
+
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: var(--cream);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Container comun */
+.eg-nav-inner,
+.eg-hero-inner{
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===== NAVBAR ===== */
+.eg-nav{
+  background: var(--eg-green-200);
+  padding: 16px 0;
+}
+.eg-nav-inner{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+:root { --eg-nav-h: 80px; }        /* ajustezi 80 după gust */
+
+.eg-nav { 
+  height: var(--eg-nav-h);
+}
+
+.eg-nav-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;             /* centrează pe verticală */
+}
+
+.eg-logo { 
+  height: 100%; 
+  display: flex; 
+  align-items: center; 
+  gap: 12px;
+}
+
+.eg-logo-img {
+  height: calc(var(--eg-nav-h) - 16px);  /* mic buffer față de margini */
+  width: auto;                            /* păstrează proporțiile */
+  display: block;                         /* elimină spațiul de sub img */
+  object-fit: contain;
+}
+
+
+
+.eg-logo-text{
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--eg-green);
+  letter-spacing: .2px;
+}
+
+/* buton header (dreapta) */
+.eg-cta-top{
+  display: inline-block;
+  background: var(--eg-green);
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 22px;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  box-shadow: 0 1px 0 rgba(0,0,0,.12) inset, var(--shadow-pill);
+  transition: filter .15s ease, transform .06s ease;
+}
+.eg-cta-top:hover{ filter: brightness(0.95); }
+.eg-cta-top:active{ transform: translateY(1px); }
+
+/* ===== HERO ===== */
+.eg-hero{
+  padding: 68px 0 80px;
+}
+.eg-hero-inner{ text-align: center; }
+
+.eg-hero-title{
+  margin: 0 0 22px;
+  text-align: center;
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--eg-green);
+  font-size: clamp(32px, 5vw, 56px); /* mare ca în mockup */
+  letter-spacing: .2px;
+}
+.eg-hero-subtitle{
+  max-width: 860px;
+  margin: 0 auto 28px;
+  text-align: center;
+  font-size: clamp(16px, 2.1vw, 22px);
+  line-height: 1.7;
+  color: #2b3b2f;
+  font-weight: 600;   /* 🔥 adăugat pentru subtitlu bold */
+}
+
+
+/* buton mare central */
+.eg-cta-main{
+  display: inline-block;
+  background: var(--eg-green);
+  color: #fff;
+  text-decoration: none;
+  padding: 18px 28px;
+  border-radius: var(--radius-lg);
+  font-size: 22px;
+  font-weight: 800;
+  box-shadow: var(--shadow-inset), var(--shadow-soft);
+  transition: filter .15s ease, transform .06s ease;
+}
+.eg-cta-main:hover{ filter: brightness(0.95); }
+.eg-cta-main:active{ transform: translateY(1px); }
+
+/* ===== Utilitare mici (opțional) ===== */
+.mt-0 { margin-top: 0 !important; }
+.mb-0 { margin-bottom: 0 !important; }
+.center { text-align: center !important; }
+
+/* ===== Responsive ===== */
+@media (max-width: 640px){
+  .eg-logo-text{ font-size: 26px; }
+  .eg-logo-img{ width: 38px; height: 38px; }
+  .eg-hero{ padding: 52px 0 64px; }
+  .eg-cta-main{ font-size: 20px; padding: 16px 24px; }
+}
+/* ===== Secțiuni & container ===== */
+.eg-container{ max-width:1120px; margin:0 auto; padding:0 20px; }
+.eg-section{ padding:48px 0; }
+.eg-section--tight{ padding-top:28px; }
+
+/* ===== Grid 2 coloane ===== */
+.eg-grid-2{
+  display:grid;
+  grid-template-columns: 1fr 420px; /* text stânga, imagine dreapta fixă */
+  gap:28px;
+  align-items:center;
+}
+@media (max-width:980px){
+  .eg-grid-2{ grid-template-columns: 1fr; }
+}
+
+/* ===== Titluri locale ===== */
+.eg-title{ color: var(--eg-green); font-weight:800; margin:0 0 10px; }
+.eg-kicker{ color: var(--eg-green); font-weight:800; margin:8px 0 8px; }
+
+/* ===== Imagini ===== */
+.eg-photo{
+  width:100%;
+  height:auto;
+  border-radius:16px;
+  object-fit:cover;
+  box-shadow: 0 6px 16px rgba(0,0,0,.10);
+}
+.eg-photo-card{ aspect-ratio: 4/3; }
+
+/* ===== Gruparea textelor (educatori + viziune) ===== */
+.eg-story-texts{ display:flex; flex-direction:column; gap:16px; }
+.eg-story-texts p{ margin:6px 0; line-height:1.6; }
+
+/* ===== CTA + 3 CARDURI ===== */
+.eg-cta{ padding: 40px 0 64px; }
+.eg-cta-band{
+  background: var(--eg-green);
+  color:#fff;
+  border-radius: 18px;
+  padding: 16px 22px;
+  text-align: center;
+  box-shadow: 0 8px 22px rgba(0,0,0,.10);
+}
+.eg-cta-title{
+  margin:0; font-weight:900; letter-spacing:.5px;
+  font-size: clamp(18px, 2.4vw, 24px);
+}
+
+.eg-cards{
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+@media (max-width:980px){
+  .eg-cards{ grid-template-columns: 1fr; }
+}
+
+.eg-card{
+  background: var(--eg-green);
+  color:#fff;
+  border-radius:18px;
+  padding:18px;
+  box-shadow: 0 8px 22px rgba(0,0,0,.10);
+  display:flex; flex-direction:column; min-height:240px;
+}
+.eg-card-title{
+  margin:0 0 8px; font-weight:800; font-size:16px;
+  letter-spacing:.4px; text-transform:uppercase;
+}
+.eg-card-list{ margin:0 0 16px; padding-left:18px; line-height:1.5; }
+.eg-card-list li{ margin:4px 0; }
+.eg-card-btn{
+  margin-top:auto; align-self:flex-start;
+  background:#fff; color:var(--eg-green);
+  text-decoration:none; font-weight:800; border-radius:12px;
+  padding:10px 14px; box-shadow: 0 6px 16px rgba(0,0,0,.12);
+  transition: transform .08s ease, filter .12s ease;
+}
+.eg-card-btn:hover{ transform: translateY(-1px); filter: brightness(.96); }
+/* ===== Povesti care aduc liniste ===== */
+.eg-story-title {
+  font-size: 36px;       /* titlul mare */
+  font-weight: 800;
+  color: var(--eg-green);
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.eg-kicker {
+  font-size: 22px;       /* subtitluri (Pentru părinți, educatori, Viziune) */
+  font-weight: 700;
+  color: var(--eg-green);
+  margin-bottom: 10px;
+}
+
+.eg-story-text {
+  font-size: 18px;       /* paragrafele */
+  line-height: 1.6;
+  color: var(--text);
+  margin-bottom: 24px;
+}
+/* Layout 2 coloane */
+.eg-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.eg-texts {
+  display: flex;
+  flex-direction: column;
+  gap: 28px; /* distanță egală între paragrafe */
+}
+
+.eg-images {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.eg-photo {
+  width: 100%;
+  max-width: 280px;  /* toate la fel */
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+/* ===== Secțiunea: Povești care aduc liniște ===== */
+.eg-section { padding: 56px 0; }
+
+.eg-section-title{
+  font-size: clamp(28px, 4.4vw, 44px);
+  line-height: 1.2;
+  font-weight: 800;
+  color: var(--eg-green);
+  text-align: left;
+  margin: 0 0 28px;
+}
+
+.eg-story-grid{
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;  /* text | imagini */
+  gap: 40px;
+  align-items: start;
+}
+
+.eg-story-left{
+  display: flex;
+  flex-direction: column;
+  gap: 28px;                 /* spații egale între cele 3 paragrafe */
+}
+
+.eg-story-item{ margin: 0; }
+.eg-item-title{
+  margin: 0 0 8px;
+  font-size: clamp(18px, 2.6vw, 22px);
+  font-weight: 800;
+  color: var(--eg-green);
+}
+
+/* coloana din dreapta cu fix 2 imagini, una sub alta */
+.eg-story-right{
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  align-items: flex-end;     /* le ține aliniate la dreapta */
+}
+
+.eg-photo{
+  width: 440px;              /* dimensiune unitară */
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  border-radius: 18px;
+  object-fit: cover;
+  background: #f3f5ef;       /* ușoară umbră de fond */
+  box-shadow: 0 8px 22px rgba(0,0,0,.08);
+}
+
+@media (max-width: 980px){
+  .eg-story-grid{ grid-template-columns: 1fr; }
+  .eg-story-right{ align-items: stretch; }
+  .eg-photo{ width: 100%; }
+}
+/* ===== Povesti - spatiere ===== */
+.eg-story-content h3 {
+  margin-top: 32px;    /* spațiu deasupra fiecărui subtitlu */
+  margin-bottom: 8px;  /* spațiu mic sub subtitlu */
+  font-size: 22px;
+  color: var(--eg-green);
+  font-weight: 700;
+}
+
+.eg-story-content p {
+  margin: 0 0 24px;    /* spațiu sub fiecare paragraf */
+  line-height: 1.6;
+  font-size: 17px;
+}
+/* ===== CTA + 3 CARDURI ===== */
+.eg-cta-cards{
+  padding: 56px 0 72px;
+  background: #fff; /* ușor contrast față de .cream */
+}
+
+.eg-cta-panel{
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.eg-cta-title{
+  margin: 0 0 8px;
+  font-size: clamp(24px, 3.6vw, 36px);
+  font-weight: 800;
+  color: var(--eg-green);
+}
+
+.eg-cta-sub{
+  margin: 0 0 16px;
+  color: #2b3b2f;
+  font-size: 18px;
+}
+
+.eg-cards-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.eg-card{
+  background: #0b4121;               /* verde închis pentru card-uri */
+  color: #fff;
+  border-radius: 18px;
+  padding: 20px 18px;
+  box-shadow: 0 8px 22px rgba(0,0,0,.08);
+}
+
+.eg-card-title{
+  margin: 0 0 12px;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.eg-card-list{
+  margin: 0 0 16px;
+  padding-left: 18px;
+  line-height: 1.6;
+}
+
+.eg-card-btn{
+  display: inline-block;
+  background: #fff;
+  color: var(--eg-green);
+  text-decoration: none;
+  font-weight: 800;
+  padding: 10px 14px;
+  border-radius: 12px;
+  box-shadow: 0 1px 0 rgba(0,0,0,.12) inset, 0 2px 6px rgba(0,0,0,.10);
+}
+.eg-card-btn:hover{ filter: brightness(.95); }
+
+/* Responsive */
+@media (max-width: 980px){
+  .eg-cards-grid{ grid-template-columns: 1fr; }
+}
+/* ====== STORY (Povești) ====== */
+.eg-section { padding: 56px 0; }
+.eg-kicker { font-size: 22px; font-weight: 800; color: var(--eg-green); margin: 0 0 10px; }
+.eg-story-title {
+  font-size: clamp(28px, 3.8vw, 44px);
+  font-weight: 900;
+  color: var(--eg-green);
+  margin: 0 0 28px;
+}
+.eg-story-grid{
+  max-width: 1120px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 420px;
+  gap: 28px 48px; align-items: start;
+}
+.eg-story-block{ margin: 6px 0 14px; }
+.eg-story-block p{
+  margin: 10px 0 0; line-height: 1.7;
+  max-width: 680px;
+}
+
+/* one shared “illustration” size for BOTH images */
+.eg-ill{
+  width: 100%; max-width: 360px; aspect-ratio: 4/3;
+  object-fit: cover; border-radius: 20px;
+  box-shadow: 0 6px 28px rgba(0,0,0,.08);
+  background: #f6f6f3;
+}
+
+/* stack on mobile */
+@media (max-width: 980px){
+  .eg-story-grid{ grid-template-columns: 1fr; }
+  .eg-ill{ max-width: 320px; }
+}
+
+/* ====== CTA + 3 cards ====== */
+.eg-cta-wrap{ max-width: 1120px; margin: 48px auto 0; padding-top: 8px; }
+.eg-cta-title{
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 900; color: var(--eg-green);
+  margin: 0 0 18px; text-align: left;
+}
+.eg-cards-grid{
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.eg-card{
+  background: var(--eg-green); color: #fff;
+  border-radius: 18px; padding: 18px 18px 14px;
+  box-shadow: 0 10px 28px rgba(0,0,0,.10);
+}
+.eg-card h3{ margin: 0 0 12px; font-size: 18px; letter-spacing:.2px; }
+.eg-card ul{ margin: 0 0 12px 18px; padding: 0; }
+.eg-card-btn{
+  display: inline-block; background: #fff; color: var(--eg-green);
+  text-decoration: none; font-weight: 800; padding: 8px 14px; border-radius: 10px;
+}
+@media (max-width: 980px){ .eg-cards-grid{ grid-template-columns: 1fr; } }
+/* ===== IMAGINI POVESTI ===== */
+.eg-photo{
+  width: 220px;       /* ambele imagini vor avea aceeași dimensiune */
+  height: auto;
+  border-radius: 12px;
+  object-fit: contain;
+  display: block;
+  margin: 12px auto;  /* ca să fie centrate pe verticală */
+}
+
+.eg-story-grid{
+  display: grid;
+  grid-template-columns: 1fr 260px; /* textul ocupă locul mare, poza coloană mică */
+  gap: 28px;
+  align-items: center; /* aliniere pe verticală */
+  margin-bottom: 36px;
+}
+/* ===== CTA BAND ===== */
+.eg-cta-band {
+  background: var(--eg-green-200); /* verde deschis */
+  padding: 60px 20px 40px;
+  text-align: center;
+}
+
+.eg-cta-band h2 {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--eg-green);
+  margin-bottom: 40px;
+}
+
+/* ===== CARDS ===== */
+.eg-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.eg-card {
+  background: var(--eg-green);
+  color: #fff;
+  border-radius: 16px;
+  padding: 28px 20px;
+  text-align: center; /* textul pe centru */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 14px rgba(0,0,0,.15);
+}
+
+.eg-card h3 {
+  margin-bottom: 16px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.eg-card ul {
+  list-style: disc;
+  padding: 0;
+  margin: 0 0 20px;
+  text-align: left; /* opțional, dacă vrei bullet points mai ordonate */
+}
+
+.eg-card ul li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+/* butoane card */
+.eg-card-btn {
+  display: inline-block;
+  margin-top: auto;
+  background: #fff;
+  color: var(--eg-green);
+  font-weight: 700;
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: 12px;
+  box-shadow: 0 1px 0 rgba(0,0,0,.12) inset, 0 2px 6px rgba(0,0,0,.10);
+}
+
+.eg-card-btn:hover {
+  filter: brightness(.95);
+}
+/* ===== CARDS ===== */
+.eg-cta-band {
+  background: var(--eg-green-200);
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.eg-cta-band h2 {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--eg-green);
+  margin-bottom: 40px;
+}
+
+.eg-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.eg-card {
+  background: var(--eg-green);
+  color: #fff;
+  border-radius: 16px;
+  padding: 28px 22px;
+  text-align: center;              /* 🔹 TOT conținutul pe centru */
+  display: flex;
+  flex-direction: column;
+  align-items: center;             /* 🔹 pe orizontală */
+  justify-content: center;         /* 🔹 pe verticală */
+  min-height: 260px;               /* 🔹 înălțime minimă simetrică */
+  box-shadow: 0 4px 12px rgba(0,0,0,.15);
+}
+
+.eg-card h3 {
+  margin-bottom: 16px;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.eg-card ul {
+  list-style: none;                /* 🔹 fără buline */
+  padding: 0;
+  margin: 0 0 22px;
+}
+
+.eg-card li {
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.eg-card-btn {
+  display: inline-block;
+  background: #fff;
+  color: var(--eg-green);
+  text-decoration: none;
+  font-weight: 700;
+  padding: 12px 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.12);
+  text-align: center;
+}
+.eg-card-btn:hover {
+  filter: brightness(.95);
+}
+/* === CTA + CARDS === */
+.eg-cta-band{
+  background: var(--eg-green-200);
+  padding: 60px 20px;
+  text-align: center;
+  border-radius: 20px;
+  margin: 60px auto;
+}
+
+.eg-cta-title{
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 40px;
+  color: var(--eg-green);
+}
+
+.eg-cards-grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 28px;
+}
+
+.eg-card{
+  background: var(--eg-green);
+  color: #fff;
+  border-radius: 16px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.eg-card h3{
+  margin-bottom: 16px;
+}
+
+.eg-card ul{
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+}
+.eg-card li{
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.eg-card li::before{
+  content: "✅";
+  margin-right: 8px;
+}
+
+.eg-card-btn{
+  background: #fff;
+  color: var(--eg-green);
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 1100px){
+  .eg-cards-grid{ grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width: 700px){
+  .eg-cards-grid{ grid-template-columns: 1fr; }
+}
+/* === CTA + CARDS === */
+.eg-cta-band{
+  background: var(--eg-green-200);
+  padding: 64px 20px;
+  border-radius: 20px;
+  margin: 60px auto;
+}
+
+.eg-cta-heading{
+  display: inline-block;
+  background: var(--eg-green);
+  color: #fff;
+  font-weight: 800;
+  font-size: clamp(22px, 3.5vw, 34px);
+  padding: 14px 28px;
+  border-radius: 14px;
+  box-shadow: 0 2px 0 rgba(0,0,0,.12) inset, 0 6px 16px rgba(0,0,0,.12);
+  margin: 0 auto 36px;
+  text-align: center;
+}
+
+/* 3 coloane pe desktop, 2 pe tabletă, 1 pe mobil */
+.eg-cards-grid{
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 28px;
+  align-items: stretch;
+}
+
+.eg-card{
+  background: var(--eg-green);
+  color: #fff;
+  border-radius: 16px;
+  padding: 28px 22px;
+  display: flex;                 /* pentru înălțimi egale + buton jos */
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 12px 24px rgba(0,0,0,.12);
+}
+
+.eg-card h3{
+  font-weight: 800;
+  letter-spacing: .5px;
+  margin: 6px 0 14px;
+}
+
+/* listă cu bifa aliniată identic peste tot */
+.eg-list{
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  width: 100%;
+  max-width: 320px;             /* pentru aliniere fixă a textului */
+}
+.eg-list li{
+  display: grid;
+  grid-template-columns: 20px 1fr;   /* col.1 = bifa, col.2 = text */
+  align-items: center;
+  gap: 10px;
+  text-align: left;                 /* textul rămâne lizibil */
+  margin: 8px 0;
+}
+.eg-list li::before{
+  content: "✅";
+  font-size: 18px;
+  line-height: 1;
+  transform: translateY(1px);
+}
+
+/* butonul jos — centru și aliniat identic în toate cardurile */
+.eg-card-btn{
+  margin-top: auto;               /* împinge butonul jos, la fel în toate */
+  background: #fff;
+  color: var(--eg-green);
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-weight: 800;
+  box-shadow: 0 1px 0 rgba(0,0,0,.1) inset, 0 4px 12px rgba(0,0,0,.12);
+}
+.eg-card-btn:hover{ filter: brightness(.95); }
+
+/* Responsive */
+@media (max-width: 1100px){
+  .eg-cards-grid{ grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width: 700px){
+  .eg-cards-grid{ grid-template-columns: 1fr; }
+}
+/* Titlu CTA sus */
+.eg-cta-title {
+  text-align: center;
+  font-weight: 800;
+  font-size: clamp(24px, 3vw, 36px);
+  color: var(--eg-green);
+  margin: 0 0 32px;
+}
+
+/* Butoane albe pe centru */
+.eg-card-btn {
+  margin: 20px auto 0;   /* centrează butonul */
+  display: inline-block;
+  background: #fff;
+  color: var(--eg-green);
+  font-weight: 800;
+  padding: 10px 18px;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,.12);
+}
+/* Titlu ca buton */
+.eg-cta-title {
+  display: inline-block;
+  background: var(--eg-green);
+  color: #fff;
+  font-size: 32px;
+  font-weight: 800;
+  padding: 20px 40px;
+  border-radius: 20px;
+  text-align: center;
+  margin: 0 auto 40px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+/* === CTA title: text alb vizibil și centrat === */
+.eg-cta-title{
+  display: flex;                 /* ca să centreze conținutul real, nu doar blocul */
+  align-items: center;
+  justify-content: center;
+  background: var(--eg-green);
+  color: #fff !important;        /* forțăm alb chiar dacă alt stil suprascrie */
+  font-weight: 800;
+  font-size: clamp(22px, 3.5vw, 36px);
+  letter-spacing: .2px;
+  padding: 18px 32px;
+  border-radius: 22px;
+  min-height: 72px;              /* pilula are înălțime suficientă pentru text */
+  margin: 0 auto 36px;
+  text-align: center;
+  line-height: 1.1;
+  box-shadow: 0 4px 12px rgba(0,0,0,.14);
+  overflow: visible;             /* evită tăierea textului */
+  mix-blend-mode: normal;        /* prevenim efecte de amestec nefericite */
+  filter: none;
+}
+
+/* === Cardurile: listă centrată cu bifa pe aceeași linie === */
+.eg-cards-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  align-items: start;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.eg-card{
+  background: var(--eg-green);
+  color: #fff;
+  border-radius: 16px;
+  padding: 26px 20px;
+  text-align: center;            /* titlul & butonul sunt centrate */
+  box-shadow: 0 4px 12px rgba(0,0,0,.12);
+}
+
+.eg-card h3{
+  margin: 0 0 14px;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+/* listă pe centru + fiecare element pe o singură linie cu bifa */
+.eg-card ul{
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;           /* centrează toată coloana de itemi */
+  gap: 10px;
+}
+
+.eg-card li{
+  display: flex;
+  align-items: center;
+  justify-content: center;       /* centrează textul cu bifa */
+  gap: 8px;
+  line-height: 1.3;
+  width: 100%;
+}
+
+.eg-card li::before{
+  content: "✅";
+  flex: 0 0 auto;
+}
+
+/* buton alb centrat */
+.eg-card-btn{
+  display: inline-block;
+  background: #fff;
+  color: var(--eg-green);
+  font-weight: 700;
+  padding: 10px 16px;
+  border-radius: 12px;
+  text-decoration: none;
+}
+.eg-card-btn:hover{ background: #f4f4f4; }
+
+/* responsive: 1 col pe ecrane mici */
+@media (max-width: 980px){
+  .eg-cards-grid{ grid-template-columns: 1fr; }
+}
+/* ===== CTA band ===== */
+.eg-cta-band{
+  background: var(--eg-green-200);
+  padding: 48px 20px 64px;
+}
+.eg-cta-wrap{
+  max-width: 1120px;
+  margin: 0 auto 28px;
+  display: flex;
+  justify-content: center;
+}
+.eg-cta-title{
+  display: inline-block;
+  background: var(--eg-green);
+  color: #fff;
+  padding: 16px 28px;
+  border-radius: 22px;
+  font-weight: 800;
+  font-size: clamp(20px, 3vw, 34px);
+  letter-spacing: .2px;
+  box-shadow: 0 2px 0 rgba(0,0,0,.15) inset, 0 8px 18px rgba(0,0,0,.12);
+}
+
+/* ===== 3 carduri ===== */
+.eg-cards-3{
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.eg-card{
+  background: linear-gradient(180deg,#1f6a32 0%,#1b5d2d 100%);
+  color:#fff;
+  border-radius:18px;
+  padding:26px 26px 22px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.16);
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.eg-card h3{
+  margin: 0 0 16px;
+  font-weight: 800;
+  letter-spacing: .4px;
+}
+
+/* bife + text pe CENTRU, unul sub altul */
+.eg-bullets{
+  list-style:none;
+  margin: 0 0 20px;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;   /* centrează fiecare rând */
+  gap:12px;
+}
+.eg-bullets li{
+  display:flex;
+  align-items:center;
+  gap:10px;             /* spațiu între bifa și text */
+  font-size: 17px;
+}
+.eg-check{ font-size: 18px; line-height: 1; }
+
+/* buton alb pe centru */
+.eg-card-btn{
+  display:inline-block;
+  margin-top:auto;
+  background:#fff;
+  color: var(--eg-green);
+  text-decoration:none;
+  font-weight:800;
+  padding:10px 18px;
+  border-radius:12px;
+  box-shadow: 0 2px 0 rgba(0,0,0,.08) inset, 0 6px 14px rgba(0,0,0,.14);
+}
+.eg-card-btn:hover{ filter: brightness(.95); }
+
+/* Responsive: stivă pe 1 coloană */
+@media (max-width: 980px){
+  .eg-cards-3{ grid-template-columns: 1fr; }
+}
+.eg-bullets {
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center; /* centrează pe mijloc */
+}
+
+.eg-bullets li {
+  display: flex;
+  align-items: center;
+  justify-content: center;   /* aliniază simetric */
+  gap: 8px;
+  font-size: 16px;
+  color: #fff;
+  text-align: center;        /* textul e centrat */
+  width: 100%;               /* forțează aceeași lățime */
+  max-width: 260px;          /* limitează să nu fie prea lat */
+}
+.eg-bullets {
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;   /* centrează totul pe mijloc */
+}
+
+.eg-bullets li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  color: #fff;
+  text-align: center;
+}
+
+.eg-bullets li::before {
+  content: "•";         /* cerc în loc de bifa */
+  color: #fff;          /* alb ca textul */
+  font-weight: bold;
+  display: inline-block;
+  width: 12px;          /* dimensiune fixă */
+  text-align: center;   /* cercul e centrat */
+}
+/* ===== Corectare aliniere liste în CTA ===== */
+.eg-bullets {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  width: 260px;             /* fixăm o lățime identică pentru toate cardurile */
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.eg-bullets li {
+  display: grid;
+  grid-template-columns: 18px 1fr;  /* prima coloană: icon fix, a doua coloană: text */
+  align-items: center;
+  column-gap: 10px;
+  color: #fff;
+  text-align: left;
+  line-height: 1.5;
+}
+
+.eg-bullets li::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #44b36b;   /* verde pentru punct */
+  display: inline-block;
+}
+/* ===== Modal generic ===== */
+.eg-modal-overlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.36);
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  z-index: 1000;
+}
+
+.eg-modal{
+  width: min(720px, 100%);
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.25);
+  padding: 24px 22px 22px;
+  position: relative;
+}
+
+.eg-modal-close{
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 10px;
+  background: #f1f5f1;
+  color: #1b1f1b;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.eg-modal-title{
+  margin: 4px 8px 14px;
+  font-size: 26px;
+  line-height: 1.25;
+  font-weight: 800;
+  color: var(--eg-green, #166A35);
+  text-align: center;
+}
+
+.eg-modal-list{
+  list-style: none;
+  margin: 0;
+  padding: 0 6px;
+  display: grid;
+  gap: 12px;
+}
+
+.eg-modal-list li{
+  display: grid;
+  grid-template-columns: 22px 1fr;   /* icon + text */
+  align-items: start;
+  gap: 10px;
+  font-size: 16.5px;
+  line-height: 1.6;
+  color: #1f2a22;
+  position: relative;
+}
+
+/* bifa verde înaintea textului */
+.eg-modal-list li::before{
+  content: "✔";
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background: #1f7a3a;
+  color: #fff;
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+.eg-modal-actions{
+  display: grid;
+  place-items: center;
+  margin-top: 18px;
+}
+
+.eg-modal-primary{
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: 0;
+  font-weight: 800;
+  background: var(--eg-green, #166A35);
+  color: #fff;
+  cursor: pointer;
+}
+
+.eg-modal-primary:hover{ filter: brightness(.95); }
+/* === MODAL generic === */
+.eg-modal-overlay{
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.45);
+  display: grid; place-items: center;
+  z-index: 1000;
+}
+
+.eg-modal{
+  width: min(820px, 92vw);
+  max-height: 85vh;
+  overflow: auto;
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.25);
+}
+
+.eg-modal h2{
+  margin: 0 0 14px;
+  font-size: 28px;
+  color: var(--eg-green);
+  font-weight: 800;
+}
+
+.eg-modal-close{
+  position: sticky; top: 0; float: right;
+  margin: -6px -6px 8px 8px;
+  border: 0; background: transparent;
+  font-size: 22px; line-height: 1;
+  cursor: pointer; color: #2b3b2f;
+}
+.eg-modal {
+  background: var(--eg-green); /* folosește verdele din site */
+  color: #fff; /* text alb */
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 700px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+.eg-modal h2, 
+.eg-modal h3 {
+  color: #fff; 
+}
+
+.eg-modal hr {
+  border: 0;
+  border-top: 1px solid rgba(255,255,255,0.3); /* separator alb semi-transparent */
+  margin: 1rem 0;
+}
+.eg-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* ===== Testimoniale ===== */
+.eg-testimonials {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.eg-testimonials-title {
+  background: var(--eg-green);
+  color: white;
+  font-weight: bold;
+  font-size: 1.8rem;
+  display: inline-block;
+  padding: 0.6rem 2rem;
+  border-radius: var(--radius-lg);
+  margin-bottom: 0.5rem;
+}
+
+.eg-testimonials-subtitle {
+  color: white;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.eg-testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.eg-testimonial {
+  background: var(--eg-green);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-soft);
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+.eg-testimonial-header {
+  background: var(--eg-green-200);
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem;
+  border-radius: var(--radius-md);
+  margin-bottom: 1rem;
+}
+/* ===== Testimoniale (corecție culori) ===== */
+
+/* cardul mare = VERDE DESCHIS (ca banda din header / CTA background) */
+.eg-testimonial{
+  background: var(--eg-green-200);   /* verde deschis #CFECCD */
+  color: var(--text);                /* text închis pentru contrast bun */
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-soft);
+  text-align: center;
+}
+
+/* bara mică sus cu nume/rol = VERDE ÎNCHIS */
+.eg-testimonial-header{
+  background: var(--eg-green);       /* verde închis #166A35 */
+  color: #fff;                        /* text alb */
+  font-weight: 800;
+  padding: 0.55rem 0.9rem;
+  border-radius: var(--radius-md);
+  margin-bottom: 1rem;
+}
+
+/* (opțional) fă textul din paragraf puțin mai lizibil pe verde deschis */
+.eg-testimonial p{
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* ===== ELEMENTE DE ÎNCREDERE (secțiune) ===== */
+.eg-trust{
+  background: var(--eg-green);               /* chenar mare – verde închis */
+  color: #fff;
+  padding: 46px 16px;
+}
+.eg-trust-inner{
+  max-width: 1120px;
+  margin: 0 auto;
+  text-align: center;
+}
+.eg-trust-title{
+  margin: 0 0 8px;
+  font-size: clamp(24px, 3.6vw, 36px);
+  font-weight: 800;
+  letter-spacing: .2px;
+}
+.eg-trust-sub{
+  margin: 0 auto 16px;
+  max-width: 760px;
+  font-weight: 700;            /* subtitlu îngroșat */
+  line-height: 1.6;
+}
+
+/* Buton mic cu fond alb */
+.eg-btn-white{
+  display: inline-block;
+  background: #fff;
+  color: var(--eg-green);
+  border: 0;
+  border-radius: 14px;
+  padding: 10px 16px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 2px 0 rgba(0,0,0,.08) inset, 0 4px 12px rgba(0,0,0,.12);
+}
+.eg-btn-white:hover{ filter: brightness(.97); }
+
+/* ===== MODAL generic (același stil ca la celelalte) ===== */
+.eg-modal{
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.45);
+  display: grid; place-items: center;
+  z-index: 1000;
+}
+.eg-modal-dialog{
+  width: min(920px, 92vw);
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.18);
+  padding: 18px 18px 8px;
+}
+.eg-modal-header{
+  display:flex; align-items:center; justify-content:space-between;
+  background: var(--eg-green);
+  color: #fff;
+  padding: 14px 16px;
+  border-radius: 12px;
+  margin-bottom: 14px;
+}
+.eg-modal-header h3{ margin: 0; font-size: 1.1rem; font-weight: 800; }
+.eg-modal-x{
+  background: rgba(255,255,255,.14);
+  color: #fff; border: 0; border-radius: 10px;
+  padding: 6px 10px; cursor: pointer;
+}
+
+.eg-legal-lead{
+  font-weight: 700; color: var(--eg-green);
+  margin: 10px 6px 14px;
+}
+.eg-trust-list{
+  margin: 0; padding: 0 18px 8px 22px;
+  display: grid; gap: 10px;
+}
+.eg-trust-list li{ line-height: 1.6; }
+
+.eg-legal-links{
+  display: flex; flex-wrap: wrap; gap: 10px;
+  padding: 12px 6px 16px;
+  border-top: 1px solid #e6efe6;
+  margin-top: 8px;
+}
+.eg-legal-link{
+  background: var(--eg-green-200);
+  color: var(--eg-green);
+  text-decoration: none;
+  font-weight: 800;
+  padding: 10px 14px;
+  border-radius: 10px;
+}
+.eg-legal-link:hover{ filter: brightness(.97); }
+
+/* ===== Modal pentru Elemente de încredere ===== */
+.eg-modal {
+  background: var(--eg-green); /* verde închis */
+  color: white; /* text alb */
+  padding: 30px;
+  border-radius: 18px;
+  max-width: 800px;
+  margin: 50px auto;
+  text-align: left; /* aliniere text uniformă */
+  line-height: 1.6; /* spațiu mai aerisit */
+}
+
+.eg-modal h3 {
+  text-align: center; /* titlul centrat */
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.eg-modal p {
+  margin: 10px 0;
+  font-size: 1rem;
+  color: white;
+  text-align: justify; /* face textul să arate simetric */
+}
+
+.eg-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+}
+
+.eg-modal-content ul {
+  list-style: disc;       /* afișează bullet-uri egale */
+  padding-left: 20px;     /* spațiu fix la stânga */
+  margin: 0;
+}
+
+.eg-modal-content li {
+  margin-bottom: 12px;    /* spațiu egal între linii */
+  line-height: 1.6;
+  text-align: left;       /* aliniere simetrică */
+  color: white;           /* text alb */
+}
+
+.eg-modal-section {
+  margin-bottom: 22px;   /* spațiu între fiecare punct */
+}
+
+.eg-modal-section strong {
+  display: block;        /* titlul pe un rând separat */
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 6px;    /* spațiu mic sub titlu */
+}
+
+.eg-modal-section span {
+  display: block;        /* textul explicativ sub titlu */
+  font-size: 16px;
+  line-height: 1.7;      /* aerisit */
+  color: #fff;
+}
+
+.eg-modal-content {
+  background-color: var(--eg-green); /* verde închis */
+  color: white; /* text alb */
+  padding: 2rem;
+  border-radius: 18px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.eg-modal-content h3 {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.eg-modal-list {
+  list-style: disc;       /* puncte clasice la listă */
+  margin: 0;
+  padding-left: 1.5rem;   /* spațiu stânga pentru bullet-uri */
+}
+
+.eg-modal-list li {
+  margin-bottom: 1.2rem;  /* spațiu între rânduri */
+  line-height: 1.6;
+  white-space: normal;    /* textul se așază normal pe orizontală */
+  word-break: normal;
+  text-align: left;
+}
+
+.eg-modal-list {
+  list-style: none;       /* fără bullets standard */
+  padding-left: 0;
+  margin: 0;
+}
+
+.eg-modal-list li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
+  color: white;
+  white-space: normal;     /* permite text normal, nu pe verticală */
+  word-break: break-word;  /* sparge doar dacă e nevoie */
+  text-align: left;
+}
+
+.eg-modal-list li strong {
+  margin-right: 0.4rem;   /* spațiu mic între titlu și rest */
+}
+
+.eg-modal-list li::before {
+  content: "✔";          /* checkmark */
+  color: #fff;
+  margin-right: 0.6rem;
+}
+
+/* --- Modal list layout: bifa | titlu | descriere --- */
+.eg-modal-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.eg-modal-list li {
+  display: grid;
+  grid-template-columns: 24px 260px 1fr; /* bifa | titlu | descriere */
+  gap: 12px 18px;
+  align-items: start;
+  margin-bottom: 16px;            /* spațiu între rânduri */
+  color: #fff;
+  white-space: normal;
+  word-break: break-word;
+  text-align: left;
+  line-height: 1.6;
+}
+
+.eg-modal-list li::before {
+  content: "✅";
+  font-size: 18px;
+  line-height: 1;
+  margin-top: 2px;                /* aliniază cu titlul */
+}
+
+/* Titlul fiecărui punct */
+.eg-modal-term {
+  font-weight: 800;
+  font-size: 1.08rem;             /* MAI MARE ca descrierea */
+  line-height: 1.35;
+}
+
+/* Descrierea */
+.eg-modal-desc {
+  opacity: 0.98;                   /* ușor mai soft decât titlul */
+  font-weight: 500;
+}
+
+/* Mai mult aer în listă dacă vrei */
+.eg-modal-list li + li {
+  margin-top: 12px;
+}
+
+/* Responsive: sub 720px trecem pe 2 coloane (bifa + titlu sus, descriere dedesubt) */
+@media (max-width: 720px) {
+  .eg-modal-list li {
+    grid-template-columns: 24px 1fr;
+  }
+  .eg-modal-desc {
+    grid-column: 2 / -1;          /* descrierea pe lățimea coloanei de titlu */
+  }
+}
+
+/* ==== FINAL CTA ==== */
+.eg-final-cta{
+  background: var(--eg-green);
+  color: #fff;
+  padding: 64px 16px;
+  border-radius: 22px;
+  margin: 64px auto 24px;
+  max-width: 1100px;
+  box-shadow: var(--shadow-soft,0 6px 16px rgba(0,0,0,.12));
+}
+.eg-final-cta .eg-container{ text-align:center; }
+.eg-final-title{
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0 0 24px 0;
+}
+.eg-final-btn{
+  display: inline-block;
+  background: #fff;
+  color: var(--eg-green);
+  font-weight: 800;
+  text-decoration: none;
+  padding: 14px 28px;
+  border-radius: 14px;
+  box-shadow: var(--shadow-pill, 0 2px 6px rgba(0,0,0,.10));
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.eg-final-btn:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0,0,0,.16);
+}
+
+/* ==== FOOTER ==== */
+.eg-footer{
+  background: #fff;
+  color: var(--text, #0f1720);
+  border-top: 1px solid rgba(0,0,0,.06);
+  padding: 28px 16px 40px;
+}
+.eg-footer-inner{
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  align-items: start;
+}
+@media (max-width: 900px){
+  .eg-footer-inner{ grid-template-columns: 1fr; text-align: center; }
+}
+
+/* brand */
+.eg-footer-brand .eg-logo-dot{
+  width: 34px; height: 34px; border-radius: 50%;
+  background: var(--eg-green);
+  display: inline-block; vertical-align: middle; margin-right: 8px;
+}
+.eg-footer-name{
+  font-weight: 800; color: var(--eg-green); font-size: 22px; vertical-align: middle;
+}
+.eg-made{ margin-top: 8px; color: var(--muted,#2b3b2f); }
+.eg-heart{ color: #e74c3c; }
+.eg-copy{ margin-top: 6px; color: var(--muted,#2b3b2f); }
+
+/* links */
+.eg-footer-links{
+  display: grid; gap: 10px;
+}
+.eg-footer-links a{
+  color: var(--eg-green);
+  text-decoration: none;
+  font-weight: 700;
+}
+.eg-footer-links a:hover{ text-decoration: underline; }
+
+/* contact */
+.eg-footer-contact{
+  display: grid; gap: 10px;
+}
+.eg-contact-label{
+  font-weight: 700; color: var(--muted,#2b3b2f); margin-right: 6px;
+}
+.eg-contact-muted{ color: rgba(0,0,0,.45); }
+
+/* subtil: verde deschis pe rânduri (fundal cald) */
+.eg-footer{ background:
+  linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 60%),
+  var(--cream, #FDFBF3);
+}
+
+/* —— Legal pages (T&C, Privacy, GDPR) —— */
+.legal-page {
+  max-width: 880px;
+  margin: 64px auto;
+  padding: 32px 24px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.06);
+  line-height: 1.75;
+  color: var(--text, #2b3b2f);
+}
+
+.legal-page h1 {
+  font-size: clamp(28px, 3.6vw, 40px);
+  color: var(--eg-green, #166A35);
+  margin: 0 0 16px;
+  font-weight: 800;
+}
+
+.legal-page .legal-updated {
+  display: inline-block;
+  margin-bottom: 28px;
+  color: #60756a;
+  font-style: italic;
+}
+
+.legal-page h2 {
+  font-size: clamp(20px, 2.2vw, 26px);
+  margin: 28px 0 12px;
+  color: var(--eg-green, #166A35);
+  font-weight: 700;
+}
+
+.legal-page h3 {
+  font-size: clamp(18px, 1.8vw, 22px);
+  margin: 22px 0 8px;
+  font-weight: 700;
+}
+
+.legal-page p { margin: 10px 0 16px; }
+
+.legal-page ul, .legal-page ol {
+  padding-left: 1.25rem;
+  margin: 8px 0 18px;
+}
+
+.legal-callout {
+  background: #f7fbf8;
+  border: 1px solid #e0efe6;
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin: 18px 0;
+}
+
+.legal-page a {
+  color: var(--eg-green, #166A35);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* containerul cu poze: una sub alta, spațiu egal */
+.eg-story-media{
+  display: flex;
+  flex-direction: column;    /* vertical, și pe PC și pe mobil */
+  align-items: center;       /* centrat pe orizontală */
+  gap: 24px;                 /* distanța între poze */
+}
+
+/* stilul imaginilor: vizibile și frumoase */
+.eg-photo{
+  display: block;
+  width: 320px;              /* mărime de bază */
+  max-width: 100%;           /* să nu iasă din container pe ecrane mici */
+  height: auto;              /* păstrează proporțiile */
+  border-radius: 18px;
+  box-shadow: var(--shadow-soft);
+  object-fit: cover;
+}
+
+/* pe ecrane mari poți mări ușor */
+@media (min-width: 1024px){
+  .eg-photo{ width: 360px; }
+}
+
+.eg-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none; /* elimină sublinierea */
+  color: inherit; /* textul ia culoarea normală, nu albastră */
+}
+
+.eg-footer-logo-img {
+  width: 40px;        /* puțin mai mare ca bulina */
+  height: 40px;
+  object-fit: contain; 
+  margin-right: 10px; /* spațiu între logo și text */
+  vertical-align: middle; /* îl aliniază corect cu textul */
+}
+
+.eg-footer-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* 3 coloane egale */
+  align-items: start;
+}
+
+/* ===== FOOTER: 3 coloane perfect aliniate ===== */
+.eg-footer-inner{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;  /* 3 coloane egale */
+  align-items:start;                   /* toate pornesc de sus */
+  gap:24px;
+}
+
+/* Coloana din stânga – logo + nume pe același rând, apoi 2 rânduri dedesubt */
+.eg-footer-brand{
+  display:grid;
+  grid-template-columns: 28px auto;    /* col 1 = logo, col 2 = text */
+  grid-auto-rows:min-content;
+  column-gap:10px;
+  row-gap:8px;
+  align-items:center;
+}
+.eg-footer-brand > *{ margin:0; }      /* elimină marginile implicite */
+
+/* plasare pe grilă */
+.eg-footer-logo-img{ grid-column:1; grid-row:1; width:24px; height:24px; }
+.eg-footer-name{     grid-column:2; grid-row:1; font-weight:700; }
+
+.eg-made{ grid-column:1 / -1; grid-row:2; }  /* rândul 2 pe toată lățimea coloanei */
+.eg-copy{ grid-column:1 / -1; grid-row:3; }  /* rândul 3 pe toată lățimea coloanei */
+
+/* Coloana din mijloc și cea din dreapta – 3 rânduri verticale, fără spații în plus */
+.eg-footer-links,
+.eg-footer-contact{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.eg-footer-links a{ display:block; margin:0; }
+
+/* Nudge fin ca să aliniem perfect prima linie din coloana stângă
+   cu prima linie din celelalte coloane */
+.eg-footer-brand{
+  margin-top: -3px;       /* joacă-te între -2px și -4px după gust */
+}
+
+/* Asigură înălțimi consistente pe primul rând */
+.eg-footer-name{ line-height: 1; }
+.eg-footer-logo-img{
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+}
+
+.eg-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* spațiu între butoane */
+  margin-left: auto; /* împinge butoanele în dreapta */
+}
+
+.eg-lang-btn {
+  background-color: var(--eg-green-dark);
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.eg-lang-btn:hover {
+  background-color: var(--eg-green-medium);
+}
+
+.eg-lang-btn {
+  background-color: var(--eg-green-dark); /* verde închis */
+  color: white; /* text alb pentru contrast */
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  margin-left: 12px; /* spațiu între butoane */
+  transition: background-color 0.2s ease;
+}
+
+.eg-lang-btn:hover {
+  background-color: #1e5d26; /* puțin mai închis la hover */
+}
+
+/* ============ Fixuri mobile fără a schimba HTML ============ */
+
+/* Imagini mereu fluide */
+.eg-photo, .eg-logo-img, .eg-footer-logo-img, .eg-story-media img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Container general mai aerisit pe mobil */
+.eg-container, .eg-nav-inner, .eg-hero-inner {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* NAV: butoanele din dreapta se rup pe rând pe ecrane mici */
+@media (max-width: 900px) {
+  .eg-nav-inner {
+    gap: 12px;
+  }
+}
+
+/* HERO: titlul și subtitlul scalează mai bine pe mobil */
+@media (max-width: 768px) {
+  .eg-hero-title { font-size: clamp(28px, 6vw, 40px); }
+  .eg-hero-subtitle { font-size: 16px; line-height: 1.6; }
+}
+
+/* ====== POVESTE (text + imagini) ====== */
+.eg-story-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;    /* desktop: 2 coloane */
+  gap: 32px;
+  align-items: start;
+}
+@media (max-width: 1024px) {
+  .eg-story-grid { gap: 24px; }
+}
+@media (max-width: 900px) {
+  .eg-story-grid {
+    grid-template-columns: 1fr;       /* mobil: 1 coloană */
+  }
+  .eg-story { margin-bottom: 16px; }
+  .eg-story-media { display: grid; gap: 12px; }
+  .eg-photo.eg-photo-large {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Spații egale între cele trei paragrafe (poveste) */
+.eg-story .eg-kicker { margin: 14px 0 6px; font-weight: 700; }
+.eg-story p { margin: 0 0 14px; }
+
+/* ====== CTA + 3 CARDURI ====== */
+.eg-cta-band { padding: 48px 0; }
+.eg-cta-title {
+  display: inline-block;
+  background: var(--eg-green);   /* verde închis */
+  color: #fff;
+  padding: 14px 22px;
+  border-radius: 14px;
+  font-weight: 800;
+  text-align: center;
+}
+
+/* grilă carduri: 3 pe desktop, 1 pe mobil */
+.eg-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 22px;
+}
+@media (max-width: 1024px) {
+  .eg-cards-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .eg-cards-grid { grid-template-columns: 1fr; }
+}
+
+/* conținutul cardurilor centrat */
+.eg-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;              /* bifele & textul pe centru */
+  padding: 18px;
+  border-radius: 14px;
+}
+.eg-card h3 { margin: 8px 0 10px; }
+.eg-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 14px;
+  display: grid;
+  gap: 6px;
+  justify-items: center;           /* totul aliniat pe centru */
+}
+.eg-card-btn {
+  align-self: center;
+}
+
+/* ====== TESTIMONIALE ====== */
+.eg-testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+@media (max-width: 1100px) {
+  .eg-testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .eg-testimonials-grid { grid-template-columns: 1fr; }
+}
+
+/* ====== ELEMENTE DE ÎNCREDERE (secțiune) ====== */
+.eg-trust-inner {
+  text-align: center;
+  padding: 32px 16px;
+}
+.eg-trust-title { margin-bottom: 8px; }
+.eg-trust-sub { margin-bottom: 14px; }
+
+/* Modal trust – lățime prietenoasă mobil */
+.eg-modal {
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+}
+.eg-modal-content {
+  width: min(720px, 100%);
+  max-height: 85vh;
+  overflow: auto;
+  border-radius: 16px;
+  padding: 18px;
+}
+.eg-modal-list {
+  display: grid;
+  gap: 12px;        /* mai aerisit între itemi */
+}
+.eg-modal-term { font-weight: 700; display: block; margin-bottom: 4px; }
+.eg-modal-desc { display: block; line-height: 1.55; }
+
+/* ====== FINAL CTA ====== */
+.eg-final-cta .eg-container {
+  text-align: center;
+}
+.eg-final-title { margin-bottom: 14px; }
+
+/* ====== FOOTER ====== */
+/* 3 coloane egale pe desktop, 1 col pe mobil */
+.eg-footer-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 18px;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .eg-footer-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .eg-footer-brand, .eg-footer-links, .eg-footer-contact {
+    align-items: center !important;
+    justify-items: center !important;
+  }
+}
+
+/* Asigură aliniere verticală uniformă în footer pe desktop */
+.eg-footer-brand,
+.eg-footer-links,
+.eg-footer-contact {
+  display: grid;
+  gap: 6px;
+}
+
+/* Butoanele din navbar pe mobil se aliniază frumos pe dreapta dacă e loc puțin */
+@media (max-width: 500px) {
+  .eg-logo-text { font-size: 24px; }
+  .eg-cta-top { padding: 10px 14px; }
+}
+
+/* Mic tuning pentru butonul de limbă (dacă-l ai) */
+.eg-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.eg-lang-btn {
+  background-color: var(--eg-green);
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.eg-lang-btn:hover { filter: brightness(.95); }
+
+/* Buton mic doar în bara de sus */
+.eg-cta-top {
+  padding: 6px 10px;
+  font-size: 13px;
+  border-radius: 8px;
+}
+
+/* Testimoniale - 2 pe verticală, swipe lateral */
+@media (max-width: 700px) {
+  .eg-testimonials-grid {
+    display: flex;                  /* facem un carusel flex orizontal */
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    gap: 12px;
+    padding: 8px;
+  }
+
+  /* fiecare slide = o coloană cu 2 testimoniale */
+  .eg-testimonials-grid > * {
+    flex: 0 0 85%;                  /* fiecare slide ocupă 85% din ecran */
+    display: flex;
+    flex-direction: column;         /* cardurile pe verticală */
+    justify-content: stretch;
+    gap: 12px;
+    scroll-snap-align: start;
+  }
+
+  /* micșorăm textul și padding-ul pentru a încăpea frumos */
+  .eg-testimonials-grid > * {
+    font-size: 14px;
+    line-height: 1.45;
+    padding: 12px;
+    border-radius: 12px;
+    min-width: 0;
+    word-break: break-word;
+  }
+}
+
+/* ascunde bara de scroll pe mobil */
+.eg-testimonials-grid::-webkit-scrollbar { display: none; }
+.eg-testimonials-grid { scrollbar-width: none; }
+
+/* ===== NAV fixuri mobile exacte cerute ===== */
+@media (max-width: 600px) {
+  /* 1) Logo + text mai apropiate */
+  .eg-logo-img, .eg-logo-text { display: inline-block; vertical-align: middle; }
+  .eg-logo-text {
+    margin-left: 4px !important;      /* apropie de logo */
+    font-size: 18px !important;        /* un pic mai mic pe mobil */
+    line-height: 1.1;
+  }
+
+  /* 2) Butoanele din dreapta: identice ca mărime și mai apropiate */
+  .eg-actions { 
+    display: flex; 
+    align-items: center; 
+    gap: 6px !important;               /* apropie „Descoperă” de „EN” */
+  }
+
+  /* forțăm EXACT aceeași înălțime la ambele butoane */
+  .eg-cta-top, .eg-lang-btn {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 10px !important;      /* mai mic decât înainte */
+    height: 32px !important;           /* aceeași înălțime pentru ambele */
+    line-height: 20px !important;
+    font-size: 13px !important;        /* aceeași mărime text */
+    border-radius: 8px !important;
+    white-space: nowrap;               /* să nu treacă pe două rânduri */
+    min-width: auto !important;
+  }
+
+  /* dacă „Descoperă EduGarden” încă e prea lat, limităm lățimea și lăsăm ellipsis */
+  .eg-cta-top {
+    max-width: 150px;                  /* ajustează 130–160 după gust */
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Asigură-te că zona stângă (logo + text) nu împinge butoanele în jos */
+  .eg-nav-inner { 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    flex-wrap: nowrap; 
+  }
+  .eg-nav-inner > * { min-width: 0; }  /* previne overflow */
+}
+
+/* Logo + text complet lipite */
+.eg-logo-img {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  margin: 0 !important;       /* eliminăm orice margin */
+  padding: 0 !important;      /* eliminăm padding ascuns */
+  height: 26px;               /* ajustează după cât vrei de mare */
+}
+
+.eg-logo-text {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  margin: 0 !important;       /* eliminăm distanța rămasă */
+  padding: 0 !important;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+/* ===== Footer fix ===== */
+
+/* Doar pe mobil: logo + text pe același rând, centrat */
+@media (max-width: 900px) {
+  .eg-footer-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    text-align: center;
+  }
+}
+
+/* Pe desktop: revenim la stivuire verticală (unu sub altu) și aliniere la stânga */
+@media (min-width: 901px) {
+  .eg-footer-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* cele 3 coloane ca înainte */
+    gap: 18px;
+    align-items: start;
+    text-align: left;
+  }
+
+  .eg-footer-brand,
+  .eg-footer-links,
+  .eg-footer-contact {
+    display: grid;              /* stivuire verticală */
+    grid-auto-flow: row;
+    gap: 6px;
+    justify-items: start;
+    align-items: start;
+  }
+
+  /* logo-ul revine aliniat la stânga și nu forțează rândul */
+  .eg-footer-logo-img {
+    height: 24px;
+    margin: 0;
+    padding: 0;
+    justify-self: start;
+  }
+}
