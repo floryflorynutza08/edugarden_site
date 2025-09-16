@@ -19,7 +19,7 @@ const [showTrust, setShowTrust] = useState(false);
       {/* ===== NAVBAR ===== */}
 <header className="eg-nav">
   <div className="eg-nav-inner">
-    <a href="/" className="eg-logo">
+    <Link href="/" className="eg-logo">
   <img 
     src="/images/logo.png" 
     alt="EduGarden Logo" 
@@ -27,11 +27,11 @@ const [showTrust, setShowTrust] = useState(false);
     style={{ height: "60px", marginRight: "10px" }} 
   />
   <span className="eg-logo-text">EduGarden</span>
-</a>
+</Link>
 
 <div className="eg-nav-actions">
-  <a className="eg-cta-top" href="#discover">Descoperă EduGarden</a>
-  <a className="eg-lang-btn" href="/en">EN</a>
+  <Link className="eg-cta-top" href="#discover">Descoperă EduGarden</Link>
+  <Link className="eg-lang-btn" href="/en">EN</Link>
 </div>
 
 
@@ -50,7 +50,7 @@ const [showTrust, setShowTrust] = useState(false);
             Fiecare zi la grădiniță este o poveste. Fiecare zâmbet, fiecare moment, fiecare pas contează.
             Meriți să o trăiești alături de copilul tău.
           </p>
-          <a className="eg-cta-main" href="#discover">Descoperă EduGarden</a>
+          <Link className="eg-cta-main" href="#discover">Descoperă EduGarden</Link>
         </div>
       </section>
 
@@ -411,12 +411,12 @@ const [showTrust, setShowTrust] = useState(false);
 <section className="eg-final-cta" id="descarca">
   <div className="eg-container">
     <h2 className="eg-final-title">Gata să vezi EduGarden în acțiune?</h2>
-    <a href="#"
+    <Link href="#"
        className="eg-final-btn"
        role="button"
        aria-label="Descarcă aplicația acum">
       Descarcă aplicația acum
-    </a>
+    </Link>
   </div>
 </section>
 
@@ -433,16 +433,16 @@ const [showTrust, setShowTrust] = useState(false);
     </div>
 
     <nav className="eg-footer-links" aria-label="Documente legale">
-      <a href="/politica-confidentialitate">Politică de confidențialitate</a>
-      <a href="/termeni-conditii">Termeni & condiții</a>
-      <a href="/acord-prelucrare-date">Acord prelucrare date (GDPR)</a>
+      <Link href="/politica-confidentialitate">Politică de confidențialitate</Link>
+      <Link href="/termeni-conditii">Termeni & condiții</Link>
+      <Link href="/acord-prelucrare-date">Acord prelucrare date (GDPR)</Link>
     </nav>
 
     <div className="eg-footer-contact">
       {/* Schimbi ușor adresele când ai domeniul */}
       <div>
         <span className="eg-contact-label">Email contact:</span>
-        <a href="mailto:edugardencontact@gmail.com">edugardencontact@gmail.com</a>
+        <Link href="mailto:edugardencontact@gmail.com">edugardencontact@gmail.com</Link>
       </div>
       
       <div>

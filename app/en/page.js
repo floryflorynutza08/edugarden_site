@@ -18,7 +18,7 @@ export default function HomeEN() {
       {/* ===== NAVBAR ===== */}
       <header className="eg-nav">
         <div className="eg-nav-inner">
-          <a href="/en" className="eg-logo">
+          <Link href="/en" className="eg-logo">
             <img
               src="/images/logo.png"
               alt="EduGarden Logo"
@@ -26,11 +26,11 @@ export default function HomeEN() {
               style={{ height: "60px", marginRight: "10px" }}
             />
             <span className="eg-logo-text">EduGarden</span>
-          </a>
+          </Link>
 
            {/* === Acțiuni dreapta: CTA + buton limbă === */}
     <div className="eg-actions">
-      <a className="eg-cta-top" href="#discover">Discover EduGarden</a>
+      <Link className="eg-cta-top" href="#discover">Discover EduGarden</Link>
       <button
         className="eg-lang-btn"
         onClick={() => (window.location.href = "/")}
@@ -55,7 +55,7 @@ export default function HomeEN() {
             Every day in kindergarten is a story. Every smile, every moment, every step matters.
             You deserve to live it close to your child.
           </p>
-          <a className="eg-cta-main" href="#discover">Discover EduGarden</a>
+          <Link className="eg-cta-main" href="#discover">Discover EduGarden</Link>
         </div>
       </section>
 
@@ -354,14 +354,14 @@ export default function HomeEN() {
       <section className="eg-final-cta" id="download">
         <div className="eg-container">
           <h2 className="eg-final-title">Ready to see EduGarden in action?</h2>
-          <a
+          <Link
             href="#"
             className="eg-final-btn"
             role="button"
             aria-label="Download the app now"
           >
             Download the app now
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -378,15 +378,15 @@ export default function HomeEN() {
           </div>
 
           <nav className="eg-footer-links" aria-label="Legal documents">
-            <a href="/politica-confidentialitate">Privacy Policy</a>
-            <a href="/termeni-conditii">Terms & Conditions</a>
-            <a href="/acord-prelucrare-date">Data Processing Agreement (GDPR)</a>
+            <Link href="/politica-confidentialitate">Privacy Policy</Link>
+            <Link href="/termeni-conditii">Terms & Conditions</Link>
+            <Link href="/acord-prelucrare-date">Data Processing Agreement (GDPR)</Link>
           </nav>
 
           <div className="eg-footer-contact">
             <div>
               <span className="eg-contact-label">Contact email:</span>
-              <a href="mailto:edugardencontact@gmail.com">edugardencontact@gmail.com</a>
+              <Link href="mailto:edugardencontact@gmail.com">edugardencontact@gmail.com</Link>
             </div>
             <div>
               <span className="eg-contact-label">Phone:</span>
