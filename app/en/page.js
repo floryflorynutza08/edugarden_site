@@ -379,6 +379,8 @@ export default function HomeEN() {
           </div>
 
           <nav className="eg-footer-links" aria-label="Legal documents">
+            <Link href="/en/delete-account">Delete account</Link>
+             <Link href="/en/delete-account">Delete Account (EN)</Link> {/* pentru EN */}
             <Link href="/politica-confidentialitate">Privacy Policy</Link>
             <Link href="/termeni-conditii">Terms & Conditions</Link>
             <Link href="/acord-prelucrare-date">Data Processing Agreement (GDPR)</Link>
