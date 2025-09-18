@@ -437,6 +437,7 @@ const [showTrust, setShowTrust] = useState(false);
       <Link href="/politica-confidentialitate">Politică de confidențialitate</Link>
       <Link href="/termeni-conditii">Termeni & condiții</Link>
       <Link href="/acord-prelucrare-date">Acord prelucrare date (GDPR)</Link>
+      <Link href="/delete-account">Ștergere cont</Link>
     </nav>
 
     <div className="eg-footer-contact">
