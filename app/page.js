@@ -31,8 +31,7 @@ const [showTrust, setShowTrust] = useState(false);
 </Link>
 
 <div className="eg-nav-actions">
-  <Link className="eg-cta-top" href="#discover">Descoperă EduGarden</Link>
-  <Link className="eg-lang-btn" href="/en">EN</Link>
+   <Link className="eg-lang-btn" href="/en">EN</Link>
 </div>
 
 
