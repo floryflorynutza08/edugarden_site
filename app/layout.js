@@ -4,8 +4,12 @@ import './globals.css';
 export const metadata = {
   title: 'EduGarden',
   description: 'Legătura zilnică dintre părinți și grădinițe',
-   icons: {
-    icon: "/favicon.png",   // asta e imaginea ta din /public
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "48x48", type: "image/x-icon" },
+      { url: "/favicon.png", sizes: "512x512", type: "image/png" },
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
   },
   openGraph: {
     title: "EduGarden – legătura zilnică dintre părinți și grădinițe",
@@ -14,7 +18,7 @@ export const metadata = {
     siteName: "EduGarden",
     images: [
       {
-        url: "/favicon.png",  // folosește aceeași imagine
+        url: "/favicon.png",
         width: 1200,
         height: 630,
         alt: "EduGarden Logo",
@@ -23,7 +27,6 @@ export const metadata = {
     locale: "ro_RO",
     type: "website",
   },
-
 };
 
 export default function RootLayout({ children }) {
