@@ -2,7 +2,7 @@ export default function PoliticaConfidentialitate() {
   return (
     <main className="legal-page" style={{ padding: "2rem", maxWidth: "900px", margin: "0 auto" }}>
       <h1>Politica de Confidențialitate – EduGarden</h1>
-      <p><em>Ultima actualizare: [data]</em></p>
+      <p><em>Ultima actualizare: [septembrie 2025]</em></p>
 
       <h2>1. Cine suntem</h2>
       <p>
