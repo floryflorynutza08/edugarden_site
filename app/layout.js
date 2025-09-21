@@ -4,6 +4,26 @@ import './globals.css';
 export const metadata = {
   title: 'EduGarden',
   description: 'Legătura zilnică dintre părinți și grădinițe',
+   icons: {
+    icon: "/IMG_4454.jpg",   // asta e imaginea ta din /public
+  },
+  openGraph: {
+    title: "EduGarden – legătura zilnică dintre părinți și grădinițe",
+    description: "Conectează-te zilnic cu grădinița copilului tău.",
+    url: "https://edugarden.ro",
+    siteName: "EduGarden",
+    images: [
+      {
+        url: "/IMG_4454.jpg",  // folosește aceeași imagine
+        width: 1200,
+        height: 630,
+        alt: "EduGarden Logo",
+      },
+    ],
+    locale: "ro_RO",
+    type: "website",
+  },
+
 };
 
 export default function RootLayout({ children }) {
@@ -13,4 +33,3 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
-
