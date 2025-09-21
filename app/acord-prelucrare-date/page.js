@@ -2,7 +2,7 @@ export default function AcordPrelucrareDate() {
   return (
     <main className="legal-page">
       <h1>Acord de prelucrare a datelor cu caracter personal (GDPR)</h1>
-      <p><em>Ultima actualizare: [data]</em></p>
+      <p><em>Ultima actualizare: [septembrie 2025]</em></p>
 
       <h2>1. Cine suntem</h2>
       <p>

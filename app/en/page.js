@@ -380,7 +380,6 @@ export default function HomeEN() {
           </div>
 
           <nav className="eg-footer-links" aria-label="Legal documents">
-            <Link href="/delete-account">Ștergere cont (RO)</Link>
             <Link href="/en/delete-account">Delete account</Link>
             <Link href="/politica-confidentialitate">Privacy Policy</Link>
             <Link href="/termeni-conditii">Terms & Conditions</Link>
