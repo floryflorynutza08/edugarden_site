@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 
 
+
 export default function HomeEN() {
   // --- STATE identical with RO page ---
   const [showParentsModal, setShowParentsModal] = useState(false);
@@ -32,7 +33,6 @@ export default function HomeEN() {
 
            {/* === Acțiuni dreapta: CTA + buton limbă === */}
     <div className="eg-actions">
-      <Link className="eg-cta-top" href="#discover">Discover EduGarden</Link>
       <button
         className="eg-lang-btn"
         onClick={() => (window.location.href = "/")}
