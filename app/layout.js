@@ -5,7 +5,7 @@ export const metadata = {
   title: 'EduGarden',
   description: 'Legătura zilnică dintre părinți și grădinițe',
    icons: {
-    icon: "/IMG_4454.jpg",   // asta e imaginea ta din /public
+    icon: "/favicon.png",   // asta e imaginea ta din /public
   },
   openGraph: {
     title: "EduGarden – legătura zilnică dintre părinți și grădinițe",
@@ -14,7 +14,7 @@ export const metadata = {
     siteName: "EduGarden",
     images: [
       {
-        url: "/IMG_4454.jpg",  // folosește aceeași imagine
+        url: "/favicon.png",  // folosește aceeași imagine
         width: 1200,
         height: 630,
         alt: "EduGarden Logo",
