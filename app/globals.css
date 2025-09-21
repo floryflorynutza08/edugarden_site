@@ -1733,11 +1733,11 @@ html, body {
 }
 
 /* containerul cu poze: una sub alta, spațiu egal */
-.eg-story-media{
+.eg-story-media {
   display: flex;
-  flex-direction: column;    /* vertical, și pe PC și pe mobil */
-  align-items: center;       /* centrat pe orizontală */
-  gap: 24px;                 /* distanța între poze */
+  flex-direction: column;
+  gap: 24px;
+  margin-top: -40px; /* ajustează între -20px și -60px după cum arată mai bine */
 }
 
 /* stilul imaginilor: vizibile și frumoase */
@@ -2213,5 +2213,46 @@ html, body {
     margin: 0;
     padding: 0;
     justify-self: start;
+  }
+}
+
+/* containerul secțiunii cu text + imagini */
+.eg-story-grid {
+  display: grid;
+  grid-template-columns: 1fr 420px; /* stânga text, dreapta imagini */
+  column-gap: 48px;
+  row-gap: 24px;
+  align-items: start;               /* aliniere sus în ambele coloane */
+}
+
+/* coloana de text – spațiere între blocuri */
+.eg-story {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;   /* spațiu între h3 și p-uri */
+  /* alternativ, dacă preferi margini: */
+  /*  line-height: 1.6; }
+      .eg-story p { margin: 0 0 12px; }
+      .eg-story h3 { margin: 18px 0 6px; } */
+}
+
+/* coloana de imagini – aceeași înălțime vizuală, spații între ele */
+.eg-story-media {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.eg-photo.eg-photo-large {
+  width: 100%;
+  height: 260px;        /* ajustează după gust (ex. 240–300px) */
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+/* Responsive – când ecranul e îngust, treci pe o coloană */
+@media (max-width: 960px) {
+  .eg-story-grid {
+    grid-template-columns: 1fr;
   }
 }
